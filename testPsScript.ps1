@@ -31,3 +31,4 @@ choco install nessus-agent -y
 choco install winscp -y
 choco install firefox -y
 choco install notepadplusplus -y
+choco install googlechrome -y
