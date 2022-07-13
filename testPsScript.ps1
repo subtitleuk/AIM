@@ -32,3 +32,4 @@ choco install winscp -y
 choco install firefox -y
 choco install notepadplusplus -y
 choco install googlechrome -y
+choco install fslogix -y
