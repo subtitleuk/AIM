@@ -35,13 +35,25 @@
         "customize": [
             {
                 "type": "PowerShell",
+                "name": "installFSLogix",
+                "runElevated": true,
+                "runAsSystem": true,
+                "scriptUri": "https://raw.githubusercontent.com/azure/azvmimagebuilder/master/solutions/14_Building_Images_WVD/0_installConfFSLogix.ps1"
+            },
+            {
+                "type": "WindowsRestart",
+                "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM_After_FSLogix_Install  > c:\\buildArtifacts\\azureImageBuilderRestart.txt",
+                "restartTimeout": "5m"
+            },
+            {
+                "type": "PowerShell",
                 "name": "CreateBuildPath",
                 "runElevated": false,
                 "scriptUri": "https://raw.githubusercontent.com/subtitleuk/AIM/main/testPsScript.ps1"
             },
             {
                 "type": "WindowsRestart",
-                "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM  > c:\\buildArtifacts\\azureImageBuilderRestart.txt",
+                "restartCheckCommand": "echo AIB-Restarted-the-VM_After_testPsScript  > c:\\buildArtifacts\\azureImageBuilderRestart.txt",
                 "restartTimeout": "5m"
             },
             {
